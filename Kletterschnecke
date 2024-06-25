@@ -1,0 +1,34 @@
+mauer: float = 4.5
+day: bool = True
+night: bool = False
+snail: float = 0
+count: int = 0
+day_count: float = 0.5
+night_count: float = 0.9
+
+# Starte das Progrmm mit einer Abfrage
+while True:
+   eingabe = input("Willst du de Schnecke laufen sehen? Drücke die Entertaste! \n Ansonsten gib igendwas ein :D  ")
+# Start des Programms
+   if eingabe == "":
+# Solange die Schnecke nicht auf der Mauer sitzt läuft die Schleife
+        while snail <= mauer:
+
+             if day == True:
+                 # Die Schnecke legt ihren Weg zurück
+                snail = snail+day_count
+
+                print(f"Die Schnecke ist {snail} geschneckt!\n")
+                print(f"{count} Tage ist die Schnecke unterwegs")
+                day = False
+                 # Der Tages Counter wird um einen Tag erhöht
+                count = count +1
+
+             elif day == False:
+                 # Die Schnecke rutscht in der Nacht 10% nach Unten
+                snail = snail*night_count
+                print(f"Die Schnecke rutscht!")
+                day = True
+# Break für das Beenden des Programms
+   else:
+       break
